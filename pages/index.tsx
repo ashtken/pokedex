@@ -1,6 +1,10 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import PokemonCard from "../components/PokemonCard";
+import { useState } from "react";
+import ListViewButton from "../components/ListViewButton";
+import ListPokemonCard from "../components/ListPokemonCard";
+import SinglePokemonCard from "../components/SinglePokemonCard";
+import SingleViewButton from "../components/SingleViewButton";
 import { PokemonList } from "../types";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -14,6 +18,8 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Home = ({ pokemon }: { pokemon: PokemonList }) => {
+	const [view, setView] = useState(false);
+	console.log(pokemon.results);
 	return (
 		<>
 			<Head>
@@ -26,13 +32,33 @@ const Home = ({ pokemon }: { pokemon: PokemonList }) => {
 				/>
 			</Head>
 			<main>
-				<div className="flex flex-wrap justify-center mt-10">
-					{pokemon.results.map((eachPokemon, index) => (
-						<div key={eachPokemon.name} className="m-3">
-							<PokemonCard {...eachPokemon} index={index} />
-						</div>
-					))}
+				<div className="flex justify-end mr-8 mt-8">
+					{view ? (
+						<button onClick={() => setView(!view)}>
+							<SingleViewButton />
+						</button>
+					) : (
+						<button onClick={() => setView(!view)}>
+							<ListViewButton />
+						</button>
+					)}
 				</div>
+
+				{view ? (
+					<div className="flex flex-wrap justify-center mt-10">
+						{pokemon.results.map((eachPokemon, index) => (
+							<div key={eachPokemon.name} className="m-3">
+								<ListPokemonCard {...eachPokemon} index={index} />
+							</div>
+						))}
+					</div>
+				) : (
+					<div>
+						<div className="flex justify-center align-middle">
+							<SinglePokemonCard {...pokemon} />
+						</div>
+					</div>
+				)}
 			</main>
 		</>
 	);
