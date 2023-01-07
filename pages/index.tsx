@@ -1,7 +1,6 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
+import PokemonCard from "../components/PokemonCard";
 import { PokemonList } from "../types";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -27,22 +26,11 @@ const Home = ({ pokemon }: { pokemon: PokemonList }) => {
 				/>
 			</Head>
 			<main>
-				<div>
-					{pokemon.results.map((eachPokemon, i) => (
-						<Link href={`/${eachPokemon.name}`} key={eachPokemon.name}>
-							<div>
-								<h1>{eachPokemon.name}</h1>
-								<h1>{eachPokemon.url}</h1>
-								<Image
-									src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${
-										i + 1
-									}.svg`}
-									width={150}
-									height={150}
-									alt={"Image of the Pokemon " + eachPokemon.name}
-								/>
-							</div>
-						</Link>
+				<div className="flex flex-wrap justify-center mt-10">
+					{pokemon.results.map((eachPokemon, index) => (
+						<div key={eachPokemon.name} className="m-3">
+							<PokemonCard {...eachPokemon} index={index} />
+						</div>
 					))}
 				</div>
 			</main>
