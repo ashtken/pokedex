@@ -2,7 +2,6 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/Home.module.css";
 import { PokemonList } from "../types";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -27,7 +26,7 @@ const Home = ({ pokemon }: { pokemon: PokemonList }) => {
 					href={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg`}
 				/>
 			</Head>
-			<main className={styles.main}>
+			<main>
 				<div>
 					{pokemon.results.map((eachPokemon, i) => (
 						<Link href={`/${eachPokemon.name}`} key={eachPokemon.name}>

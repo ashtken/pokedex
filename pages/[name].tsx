@@ -41,7 +41,11 @@ const SinglePokemon = ({ pokemon }: { pokemon: Pokemon }) => {
 					href={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
 				/>
 			</Head>
-			<p>Pokemon: {pokemon.name}</p>
+			<main>
+				<>
+					<h1>Pokemon: {pokemon.name}</h1>
+				</>
+			</main>
 		</>
 	);
 };
