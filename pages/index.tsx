@@ -19,7 +19,6 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home = ({ pokemon }: { pokemon: PokemonList }) => {
 	const [view, setView] = useState(false);
-	console.log(pokemon.results);
 	return (
 		<>
 			<Head>
@@ -31,14 +30,20 @@ const Home = ({ pokemon }: { pokemon: PokemonList }) => {
 					href={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg`}
 				/>
 			</Head>
-			<main>
-				<div className="flex justify-end mr-8 mt-8">
+			<main className="max-w-screen-2xl flex flex-col justify-center m-auto">
+				<div className="flex justify-end mr-4 sm:mr-14 mt-8">
 					{view ? (
-						<button onClick={() => setView(!view)}>
+						<button
+							onClick={() => setView(!view)}
+							className="stroke-white hover:stroke-blue-500 transition ease-in-out delay-75"
+						>
 							<SingleViewButton />
 						</button>
 					) : (
-						<button onClick={() => setView(!view)}>
+						<button
+							onClick={() => setView(!view)}
+							className="stroke-white hover:stroke-blue-500 transition ease-in-out delay-75"
+						>
 							<ListViewButton />
 						</button>
 					)}
@@ -54,8 +59,16 @@ const Home = ({ pokemon }: { pokemon: PokemonList }) => {
 					</div>
 				) : (
 					<div>
-						<div className="flex justify-center align-middle">
+						<div className="flex justify-center align-middle my-10 sm:mb-52">
 							<SinglePokemonCard {...pokemon} />
+						</div>
+						<hr className="h-0.5 bg-white border-0 rounded-xl mx-4 my-20 sm:hidden" />
+						<div className="flex flex-wrap justify-center mt-10">
+							{pokemon.results.map((eachPokemon, index) => (
+								<div key={eachPokemon.name} className="m-3">
+									<ListPokemonCard {...eachPokemon} index={index} />
+								</div>
+							))}
 						</div>
 					</div>
 				)}

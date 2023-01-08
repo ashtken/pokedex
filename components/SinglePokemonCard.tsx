@@ -15,15 +15,18 @@ const SinglePokemonCard = (pokemon: PokemonList) => {
 		}
 	};
 	return (
-		<div className="flex">
-			<button onClick={() => range(count - 1)} className="mr-11">
+		<div className="flex justify-between items-center w-full">
+			<button
+				onClick={() => range(count - 1)}
+				className="ml-2 sm:ml-20 h-24 stroke-white hover:stroke-blue-500 transition ease-in-out delay-75"
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
 					viewBox="0 0 24 24"
 					strokeWidth="3"
 					stroke="#ffffff"
-					className="w-20 h-20"
+					className="w-8 h-8 sm:w-20 sm:h-20 stroke-inherit"
 				>
 					<path
 						strokeLinecap="round"
@@ -33,28 +36,31 @@ const SinglePokemonCard = (pokemon: PokemonList) => {
 				</svg>
 			</button>
 			<Link href={`/${pokemon.results[count - 1].name}`}>
-				<div className="flex flex-col w-80">
+				<div className="flex flex-col">
 					<Image
 						src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${count}.svg`}
 						width={80}
 						height={80}
 						alt={"Image of the Pokemon " + pokemon.results[count - 1].name}
-						className="w-80 h-80 p-1 mb-10 drop-shadow-2xl"
+						className="w-52 h-52 sm:w-80 sm:h-80 p-1 mb-10 drop-shadow-2xl"
 					/>
-					<div className="flex justify-between text-4xl font-semibold capitalize text-white p-5  border-2 border-yellow-400 rounded-lg overflow-hidden bg-blue-500">
+					<div className="flex justify-between text-lg sm:text-4xl font-semibold capitalize text-white p-5  border-2 border-yellow-400 rounded-lg overflow-hidden bg-blue-500">
 						<h1>{pokemon.results[count - 1].name}</h1>
 						<h1>#{count}</h1>
 					</div>
 				</div>
 			</Link>
-			<button onClick={() => range(count + 1)} className="ml-11">
+			<button
+				onClick={() => range(count + 1)}
+				className="mr-2 sm:mr-20 h-24 stroke-white hover:stroke-blue-500 transition ease-in-out delay-75"
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
 					viewBox="0 0 24 24"
 					strokeWidth="3"
 					stroke="#ffffff"
-					className="w-20 h-20"
+					className="w-8 h-8 sm:w-20 sm:h-20 stroke-inherit"
 				>
 					<path
 						strokeLinecap="round"
