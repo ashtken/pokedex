@@ -1,6 +1,6 @@
 # Next.js & Tailwind Pokedex
 
-DEMO 👉 Coming Soon
+DEMO 👉 [Here!](https://pokedex-silk-nu.vercel.app/) 
 
 This is a Pokedex powered by [Next.js](https://github.com/zeit/next.js/) & [Tailwind](https://github.com/tailwindlabs/tailwindcss) using the [PokeAPI](https://pokeapi.co/).
 
