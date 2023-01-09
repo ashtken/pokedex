@@ -6,6 +6,7 @@ const ListViewButton = () => {
 			viewBox="0 0 24 24"
 			strokeWidth="1.5"
 			stroke="#fff"
+			aria-label="List View"
 			className="w-7 h-7 stroke-inherit"
 		>
 			<path
