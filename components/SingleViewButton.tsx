@@ -7,6 +7,7 @@ const SingleViewButton = () => {
 			strokeWidth="1.5"
 			stroke="#fff"
 			className="w-7 h-7 stroke-inherit"
+			aria-label="Single View"
 		>
 			<path
 				strokeLinecap="round"

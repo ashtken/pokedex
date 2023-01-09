@@ -30,7 +30,7 @@ const Home = ({ pokemon }: { pokemon: PokemonList }) => {
 					href={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg`}
 				/>
 			</Head>
-			<main className="max-w-screen-2xl flex flex-col justify-center m-auto">
+			<main className="font-mono max-w-screen-2xl flex flex-col justify-center m-auto">
 				<div className="flex justify-end mr-4 sm:mr-14 mt-8">
 					{view ? (
 						<button
