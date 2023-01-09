@@ -1,11 +1,13 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import { useState } from "react";
+
+import { PokemonList } from "../types";
+
 import ListViewButton from "../components/ListViewButton";
 import ListPokemonCard from "../components/ListPokemonCard";
 import SinglePokemonCard from "../components/SinglePokemonCard";
 import SingleViewButton from "../components/SingleViewButton";
-import { PokemonList } from "../types";
 
 export const getStaticProps: GetStaticProps = async () => {
 	const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");

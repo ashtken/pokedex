@@ -1,11 +1,12 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import BackButton from "../components/BackButton";
-import PokemonMoves from "../components/PokemonMoves";
-import PokemonStats from "../components/PokemonStats";
+
 import { Pokemon } from "../types";
 import { PokemonList } from "../types";
+
+import BackButton from "../components/BackButton";
+import PokemonStats from "../components/PokemonStats";
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
