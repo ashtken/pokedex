@@ -45,7 +45,7 @@ const SinglePokemonCard = (pokemon: PokemonList) => {
 						alt={"Image of the Pokemon " + pokemon.results[count - 1].name}
 						className="w-52 h-52 sm:w-80 sm:h-80 p-1 mb-10 drop-shadow-2xl"
 					/>
-					<div className="flex justify-between gap-2 text-lg sm:text-4xl font-semibold capitalize text-white p-5  border-2 border-yellow-400 rounded-lg overflow-hidden bg-blue-500">
+					<div className="flex justify-between gap-2 text-lg sm:text-4xl font-semibold capitalize text-white p-5  border-2 border-yellow-400 rounded-lg overflow-hidden bg-blue-600">
 						<h1>{pokemon.results[count - 1].name}</h1>
 						<h1>#{count}</h1>
 					</div>

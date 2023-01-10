@@ -3,7 +3,7 @@ import PokemonType from "./PokemonType";
 
 const PokemonStats = (pokemon: Pokemon) => {
 	return (
-		<div className="text-white text-lg font-semibold p-4 capitalize border-2 border-yellow-400 rounded-lg overflow-hidden bg-blue-500">
+		<div className="text-white text-lg font-semibold p-4 capitalize border-2 border-yellow-400 rounded-lg overflow-hidden bg-blue-600">
 			<div className="flex flex-wrap">
 				<div className="mr-6 mb-6">
 					<h2 className="text-3xl mb-2">Stats:</h2>
@@ -17,7 +17,7 @@ const PokemonStats = (pokemon: Pokemon) => {
 						))}
 					</ul>
 				</div>
-				<div>
+				<div className="mb-6">
 					<h2 className="text-3xl mb-2">Abilities:</h2>
 					<ul>
 						{pokemon.abilities.map((ability, i) => (
